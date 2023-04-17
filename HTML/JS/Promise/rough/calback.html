@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+// function loadScript(src, callback) {
+//   let script = document.createElement('script');
+//   script.src = src;
+//   script.onload = () => callback(script);
+//   document.head.append(script);
+// }
+//CAllbacK IN JS
+function fetchData(url, callback) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => callback(data))
+    .catch(error => console.log(error));
+}
+
+function handleData(data) {
+  console.log(data);
+}
+
+fetchData('https://example.com/data', handleData);
+
+// loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script => {
+//   alert(`Cool, the script ${script.src} is loaded`);
+//   alert( _ ); // _ is a function declared in the loaded script
+// });
+// loadScript('/my/script.js', function(script) {
+
+// alert(`Cool, the ${script.src} is loaded, let's load one more`);
+
+// loadScript('/my/script2.js', function(script) {
+//   alert(`Cool, the second script is loaded`);
+// });
+
+// });
+
+// let promise = new Promise(function(resolve, reject) {
+//   setTimeout(() => resolve("done!"), 1000);
+// });
+
+// // resolve runs the first function in .then
+// promise.then(
+//   result => alert(result), // shows "done!" after 1 second
+//   error => alert(error) // doesn't run
+// );
+
+//Handling errors
+// function loadScript(src, callback) {
+//   let script = document.createElement('script');
+//   script.src = src;
+
+//   script.onload = () => callback(null, script);
+//   script.onerror = () => callback(new Error(`Script load error for ${src}`));
+
+//   document.head.append(script);
+// }
+
+//.then function
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve("done!"), 1000);
+});
+
+// resolve runs the first function in .then
+promise.then(
+  result => alert(result), // shows "done!" after 1 second
+  error => alert(error) // doesn't run
+);
+
+
+//single callback function is used both for
+// reporting errors and passing back results.
+</script>

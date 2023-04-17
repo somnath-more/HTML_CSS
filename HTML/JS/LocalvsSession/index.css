@@ -1,0 +1,9 @@
+.container{
+    justify-content: center;
+    text-align: center;
+    padding-top: 10%;
+    font-size: larger;
+}
+body{
+    background-color: rgb(95, 169, 72);
+}

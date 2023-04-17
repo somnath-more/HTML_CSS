@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use of The class Attribute in JavaScript</h2>
+<p>Click the button to hide all elements with class name "city":</p>
+
+<button onclick="myFunction()">Hide elements</button>
+
+<h2 class="rcb">VIRAT</h2>
+<p>Virat</p>
+
+<h2 class="rcb">ABD</h2>
+<p>ABD</p>
+
+<h2 class="rcb">Gayle</h2>
+<p>Gayle</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementsByClassName("rcb");
+  for (var i = 0; i < x.length-1; i++) {
+    x[i].style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

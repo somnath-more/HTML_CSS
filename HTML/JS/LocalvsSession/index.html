@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalvsSession</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Local Storage</h1>
+        <h4>Local storage Score :</h4>
+        <div id="counter"></div><br>
+        <h1>Session Storage</h1>
+        <h4>Session storage Score :</h4>
+        <div id="counter1"></div><br>
+        <button  onclick="functionToExecute1()">Decreament</button>
+        <button id="exec" onclick="functionToExecute()">Increament</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script>
+        var localscore = localStorage.getItem('on_load_counter');
+        var sessionscore= sessionStorage.getItem('on_load_counter');
+       
+        if (localscore === null) {
+            localscore = 0;
+        }
+        if (sessionscore === null) {
+           sessionscore= 0;
+        }
+        function functionToExecute() {
+            //wtd
+            console.log(localscore );
+
+           localscore ++;
+           sessionscore++;
+            localStorage.setItem("on_load_counter",localscore );
+            sessionStorage.setItem("on_load_counter",sessionscore);
+            console.log(sessionscore);
+            document.getElementById('counter').innerHTML =localscore ;
+            document.getElementById('counter1').innerHTML =sessionscore;
+        }
+        function functionToExecute1() {
+            //wtd
+            console.log(localscore );
+
+           localscore --;
+           sessionscore --;
+            localStorage.setItem("on_load_counter",localscore );
+            sessionStorage.setItem("on_load_counter",sessionscore);
+            console.log(sessionscore);
+            document.getElementById('counter').innerHTML =localscore ;
+            document.getElementById('counter1').innerHTML =sessionscore;
+        }
+        // document.getElementById('exec').addEventListener('click', functionToExecute);
+        document.getElementById('counter').innerHTML =localscore ;
+        document.getElementById('counter1').innerHTML =sessionscore;
+
+
+        function reset_counter() {
+
+            localStorage.removeItem('on_load_counter');
+            sessionStorage.removeItem('on_load_counter');
+            localscore = 0;
+            sessionscore= 0;
+            document.getElementById('counter').innerHTML =localscore ;
+            document.getElementById('counter1').innerHTML =sessionscore;
+        }
+
+        document.getElementById('reset').addEventListener('click', reset_counter);
+
+    </script>
+
+</body>
+
+</html>

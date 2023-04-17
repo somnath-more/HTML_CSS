@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(89, 225, 221);
+    background-image: url('vk.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+}
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+  h4{
+    border: 2px solid blueviolet;
+    padding-top: 60px ;
+    padding-bottom: 50px ;
+    padding-left: 150px ;
+    padding-right: 40px ;
+
+  
+  }
+  h5{
+    text-align: center;
+    color: blue;
+    background-color: palegreen;
+    border: 2px solid blueviolet;
+    margin-top: 20px ;
+    margin-left: 150px ;
+    margin-right: 150px ;
+   
+    
+
+  
+  }
